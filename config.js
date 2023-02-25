@@ -1,4 +1,5 @@
 require("dotenv").config()
+
 module.exports = {// TODO: add description to app.json
 	helpCmdPerPage: 10, //- Number of commands per page of help command
 	lyricsMaxResults: 5, //- Number of results for lyrics command (Do not touch this value if you don't know what you are doing)/- Client Secret of the bot TODO: add description to app.json
