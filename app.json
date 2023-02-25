@@ -18,7 +18,11 @@
       "url": "heroku/nodejs"
     }
   ],
+ 
   "env": {
+    "adminId": {
+      "required": "true"
+    },
     "token": {
       "description": "The Discord Bot Token (https://discord.com/developers/applications)",
       "required": "true"
@@ -34,6 +38,16 @@
     "website": {
       "description": "URL of your webserver (Example: https://domain.xyz). Change this if you want to use the web-dashboard.",
       "value": "http://localhost"
+    },
+    "lavalinkHost": {
+      "required": "true"
+    },
+    "lavalinkPort": {
+      "required": "false"
+    },
+    "lavalinkPassword": {
+      "required": "true"
     }
+
   }
 }
