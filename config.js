@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {// TODO: add description to app.json
 	cmdPerPage: 10, //- Number of commands per page of help command
 	adminId: process.env.adminId || "", //- Replace UserId with the Discord ID of the admin of the bot
