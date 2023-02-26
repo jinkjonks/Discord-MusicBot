@@ -30,7 +30,7 @@ module.exports = {// TODO: add description to app.json
 		{
 			identifier: "Main Node", //- Used for indentifier in stats commands.
 			host: process.env.lavalinkHost || "", //- The host name or IP of the lavalink server.
-			port: process.env.lavalinkPort || 80, // The port that lavalink is listening to. This must be a number!
+			port: Number(process.env.lavalinkPort) || 2333, // The port that lavalink is listening to. This must be a number!
 			password: process.env.lavalinkPassword || "", //- The password of the lavalink server.
 			retryAmount: 200, //- The amount of times to retry connecting to the node if connection got dropped.
 			retryDelay: 5000, //- Delay between reconnect attempts if connection is lost.
