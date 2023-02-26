@@ -47,7 +47,7 @@ deploy-bot:
 start-lavalink:
 	(cd lavalink && java -jar Lavalink.jar) > /dev/null &
 
-bot: start-lavalink
+bot: 
 	npm install && npm run start
 
 report:
