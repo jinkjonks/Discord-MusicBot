@@ -6,7 +6,7 @@ module.exports = {// TODO: add description to app.json
 	token: process.env.token || "", //- Bot's Token
 	clientId: process.env.clientId || "", //- ID of the bot
 	clientSecret: process.env.clientSecret || "", //- Client Secret of the bot
-	port: 4200, //- Port of the API and Dashboard
+	port: 80, //- Port of the API and Dashboard
 	scopes: ["identify", "guilds", "applications.commands"], //- Discord OAuth2 Scopes
 	serverDeafen: true, //- If you want bot to stay deafened
 	defaultVolume: 100, //- Sets the default volume of the bot, You can change this number anywhere from 1 to 100
@@ -26,12 +26,12 @@ module.exports = {// TODO: add description to app.json
 		{
 			identifier: "Main Node", //- Used for indentifier in stats commands.
 			host: process.env.lavalinkHost || "", //- The host name or IP of the lavalink server.
-			port: process.env.lavalinkPort || 80, // The port that lavalink is listening to. This must be a number!
+			port: Number(process.env.lavalinkPort) || 2333, // The port that lavalink is listening to. This must be a number!
 			password: process.env.lavalinkPassword || "", //- The password of the lavalink server.
 			retryAmount: 200, //- The amount of times to retry connecting to the node if connection got dropped.
-			retryDelay: 40, //- Delay between reconnect attempts if connection is lost.
+			retryDelay: 5000, //- Delay between reconnect attempts if connection is lost.
 			secure: false, //- Can be either true or false. Only use true if ssl is enabled!
-		},
+		}
 	],
 	embedColor: "#2f3136", //- Color of the embeds, hex supported
 	presence: {

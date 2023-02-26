@@ -18,7 +18,7 @@
     "url": "git+https://github.com/SudhanPlayz/Discord-MusicBot.git"
   },
   "engines": {
-    "node": ">=16.x <=16.19"
+    "node": ">=16.x <17"
   },
   "keywords": [
     "discord",
@@ -59,6 +59,7 @@
     "js-yaml": "^4.1.0",
     "jsoning": "^0.13.0",
     "lodash": "^4.17.21",
+    "lyrics-searcher-musixmatch": "1.0.2",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
     "node-fetch": "2.6.7",
@@ -68,11 +69,10 @@
     "pretty-ms": "^7.0.1",
     "systeminformation": "^5.9.12",
     "winston": "^3.3.3",
-    "lyrics-searcher-musixmatch": "1.0.2",
     "youtube-sr": "^4.3.4"
   },
   "devDependencies": {
-    "prettier": "2.6.2"
+    "prettier": "^2.8.4"
   },
   "volta": {
     "node": "16.15.1",
