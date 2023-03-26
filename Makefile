@@ -5,8 +5,11 @@ invite:
 deploy-bot:
 	npm install && npm run deploy 
 
+get-lavalink:
+	curl -sSL https://github.com/freyacodes/Lavalink/releases/download/3.7.5/Lavalink.jar > lavalink/Lavalink.jar
+
 start-lavalink:
-	(cd lavalink && java -jar Lavalink.jar) > /dev/null &
+	(cd lavalink && java -jar Lavalink.jar)
 
 bot: 
 	npm install && npm run start
