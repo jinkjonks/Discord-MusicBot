@@ -123,3 +123,6 @@ yarn.lock
 .idea/
 .vscode/
 .history/
+
+# Jar files
+*.jar
