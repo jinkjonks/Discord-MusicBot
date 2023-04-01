@@ -1,9 +1,9 @@
 server:
-    port: {{env.lavalinkPort}}
-    address: {{env.lavalinkHost}}
+    port: ${lavalinkPort}
+    address: ${lavalinkHost}
 lavalink:
     server:
-        password: {{env.lavalinkPassword}}
+        password: ${lavalinkPassword}
         sources:
             youtube: true
             bandcamp: true
@@ -35,8 +35,8 @@ lavalink:
         soundcloudSearchEnabled: true
         gc-warnings: true
         youtubeConfig:
-            email: {{env.youtubeEmail}}
-            password: {{env.youtubePassword}}
+            email: ${youtubeEmail}
+            password: ${youtubePassword}
 metrics:
     prometheus:
         enabled: false
