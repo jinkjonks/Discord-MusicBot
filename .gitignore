@@ -80,6 +80,10 @@ yarn.lock
 .env
 .env.test
 
+# lavalink
+application.yml
+*.jar
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
