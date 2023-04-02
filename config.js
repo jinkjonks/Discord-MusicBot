@@ -37,7 +37,7 @@ module.exports = {// TODO: add description to app.json
 			secure: false, //- Can be either true or false. Only use true if ssl is enabled!
 		}
 	],
-	embedColor: "#2f3136", //- Color of the embeds, hex supported
+	embedColor: "#8cd4a3", //- Color of the embeds, hex supported
 	presence: {
 		// PresenceData object | https://discord.js.org/#/docs/main/stable/typedef/PresenceData
 		status: "online", //- You can have online, idle, dnd and invisible (Note: invisible makes people think the bot is offline)
