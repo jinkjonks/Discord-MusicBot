@@ -134,3 +134,4 @@ yarn.lock
 
 ll_*.txt
 db_*.txt
+secrets

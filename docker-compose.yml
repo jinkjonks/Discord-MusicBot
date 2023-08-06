@@ -18,8 +18,6 @@ services:
       - ll_yt_pass
     volumes:
       - ./plugins/:/opt/Lavalink/plugins/ # persist plugins between restarts, make sure to set the correct permissions (user: 322, group: 322)
-    networks:
-      - lavalink
     expose:
       - 2333 # lavalink exposes port 2333 to connect to for other containers (this is for documentation purposes only)
     ports:
