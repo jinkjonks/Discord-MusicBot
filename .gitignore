@@ -130,3 +130,7 @@ yarn.lock
 
 # Jar files
 *.jar
+.python-version
+
+ll_*.txt
+db_*.txt

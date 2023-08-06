@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  lavalink:
+    image: ghcr.io/lavalink-devs/lavalink:4 # pin the image version to Lavalink v4
+    container_name: lavalink
+    restart: unless-stopped
+    environment:
+      - SERVER_ADDRESS=/run/secrets/ll_host
+      - SERVER_PORT=2333
+      - LAVALINK_SERVER_PASSWORD=/run/secrets/ll_pass
+      - LAVALINK_YOUTUBE_CONFIG_EMAIL=/run/secrets/ll_yt_email
+      - LAVALINK_YOUTUBE_CONFIG_PASSWORD=/run/secrets/ll_yt_pass
+    secrets:
+      - ll_host
+      - ll_pass
+      - ll_yt_email
+      - ll_yt_pass
+    volumes:
+      - ./plugins/:/opt/Lavalink/plugins/ # persist plugins between restarts, make sure to set the correct permissions (user: 322, group: 322)
+    networks:
+      - lavalink
+    expose:
+      - 2333 # lavalink exposes port 2333 to connect to for other containers (this is for documentation purposes only)
+    ports:
+      - 2333:2333 # you only need this if you want to make your lavalink accessible from outside of containers
+  spork:
+    depends_on:
+      - lavalink
+    image: spork:latest
+    container_name: spork
+    build: .
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./config.js:/usr/src/app/config.js:ro
+
+
+secrets:
+  ll_host:
+    file: ll_host.txt
+  ll_pass: 
+    file: ll_pass.txt
+  ll_yt_email:
+    file: ll_yt_email.txt
+  ll_yt_pass:
+    file: ll_yt_pass.txt
+  
+
+    
+
+  
