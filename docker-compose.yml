@@ -29,6 +29,25 @@ services:
     container_name: spork
     build: .
     restart: unless-stopped
+    environment:
+      - cookieSecret=/run/secrets/db_cookie_secret
+      - serverAddress=/run/secrets/ll_host
+      - serverPort=2333
+      - serverPassword=/run/secrets/ll_pass
+      - adminId=/run/secrets/db_admin_id
+      - token=/run/secrets/db_token
+      - clientId=/run/secrets/db_client_id
+      - clientSecret=/run/secrets/db_client_secret
+      - website=/run/secrets/db_website
+    secrets:
+      - ll_host
+      - ll_pass
+      - db_cookie_secret
+      - db_admin_id
+      - db_token
+      - db_client_id
+      - db_client_secret
+      - db_website
     ports:
       - 80:80
     volumes:
@@ -44,7 +63,19 @@ secrets:
     file: ll_yt_email.txt
   ll_yt_pass:
     file: ll_yt_pass.txt
-  
+  db_token: 
+    file: db_token.txt
+  db_admin_id:
+    file: db_admin_id.txt
+  db_client_id: 
+    file: db_client_id.txt
+  db_client_secret: 
+    file: db_client_secret.txt
+  db_cookie_secret:
+    file: db_cookie_secret.txt
+  db_website:
+    file: db_website.txt
+
 
     
 
